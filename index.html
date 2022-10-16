@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <style>
+      [x-cloak] {
+        display: none;
+      }
+    </style>
+    <title>AlpineJs - TailwindCss</title>
+  </head>
+
+  <body>
+    <div class="container mx-auto mt-6 max-w-sm">
+      <h1 class="text-5xl mb-4">Alpine.js Demo</h1>
+      <div x-data="{open:false, name:'My Name'}">
+        <button
+          class="bg-slate-700 text-white px-4 py-2 rounded-xl"
+          x-on:click="open=!open"
+        >
+          Toggle
+        </button>
+        <div x-show="open" x-transition x-cloak>
+          <p class="bg-gray-200 p-4 my-6 rounded">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia
+            magni quidem reiciendis natus qui sed praesentium dolorem nobis
+            atque assumenda?
+          </p>
+        </div>
+        <div class="my-4">
+          The Value of Name: <span class="font-bold" x-text="name"></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
