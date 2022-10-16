@@ -20,13 +20,17 @@
   <body>
     <div class="container mx-auto mt-6 max-w-sm">
       <h1 class="text-5xl mb-4">Alpine.js Demo</h1>
+      <!-- x-data Alpine component -->
       <div x-data="{open:false, name:'My Name'}">
+        <!-- x-on:click  -->
         <button
           class="bg-slate-700 text-white px-4 py-2 rounded-xl"
           x-on:click="open=!open"
+          x-bind:class="open ? 'bg-blue-800' :'bg-slate-700'"
         >
           Toggle
         </button>
+        <!-- x-show & x-bind -->
         <div x-show="open" x-transition x-cloak>
           <p class="bg-gray-200 p-4 my-6 rounded">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia
@@ -34,9 +38,12 @@
             atque assumenda?
           </p>
         </div>
+        <!-- x-text  -->
         <div class="my-4">
           The Value of Name: <span class="font-bold" x-text="name"></span>
         </div>
+        <!-- x-effect  -->
+        <div x-effect="console.log(open)"></div>
       </div>
     </div>
   </body>
