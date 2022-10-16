@@ -101,6 +101,16 @@
         </div>
         <!-- x-html  -->
         <div x-html="(await axios.get('./partial.html')).data">...</div>
+        <!-- $el (current element)  -->
+        <button
+          class="bg-slate-700 text-white px-4 py-2 mt-4 rounded-xl"
+          x-on:click="$el.innerHTML='Hello World'"
+        >
+          Replace Text
+        </button>
+        <!-- X-init (fires when intialized)  -->
+        <!-- $watch (watches a data prop)  -->
+        <div x-init="$watch('posts', value=>console.log(value))"></div>
       </div>
     </div>
   </body>
