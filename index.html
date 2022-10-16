@@ -111,7 +111,34 @@
         <!-- X-init (fires when intialized)  -->
         <!-- $watch (watches a data prop)  -->
         <div x-init="$watch('posts', value=>console.log(value))"></div>
+        <!-- $dispatch (dispatches browser events) -->
+        <div @notify="alert('You have been notified!')">
+          <button
+            class="bg-slate-700 text-white px-4 py-2 mt-4 rounded-xl"
+            @click="$dispatch('notify')"
+          >
+            Notify
+          </button>
+        </div>
+        <!-- $data  -->
+        <button
+          class="bg-slate-700 text-white px-4 py-2 mt-4 rounded-xl"
+          @click="getLatestPost($data.posts)"
+        >
+          Get Latest Post</button
+        ><br />
+        <small>Check the console</small>
       </div>
     </div>
+
+    <footer x-data class="bg-gray-200 p-4 my-6 text-center">
+      <p>Copyright &copy; <span x-text="new Date().getFullYear()"></span></p>
+    </footer>
+
+    <script>
+      function getLatestPost(posts) {
+        console.log(posts.slice(-1).pop());
+      }
+    </script>
   </body>
 </html>
