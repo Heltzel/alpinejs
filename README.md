@@ -6,5 +6,5 @@
  
  This crashcourse was built using [Alpine js](https://alpinejs.dev/) and  [Tailwind css](https://tailwindcss.com/) 
  <br>
- The video: [Alpine.js Crash Course](https://youtu.be/r5iWCtfltso?t=1)
+ The video by Brad Traversy: [Alpine.js Crash Course](https://youtu.be/r5iWCtfltso?t=1)
 </p>
